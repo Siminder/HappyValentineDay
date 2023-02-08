@@ -1,0 +1,283 @@
+:root {
+	margin: 0;
+  font-size: 16px;
+  font-family: 'Caveat', cursive;
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --transition-speed: 600ms;
+   width: 100%;
+  height: 100%;
+   background: url(layer2.png) no-repeat center center fixed; 
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+}
+.glitch{
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch{
+  2%,64%{
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(5deg); 
+  }
+}
+
+
+.glitch:before,
+
+.glitch:after{
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+
+.glitch:before{
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop{
+  2%,64%{
+    transform: translate(2px,-2px);
+  }
+  4%,60%{
+    transform: translate(-2px,2px);
+  }
+  62%{
+    transform: translate(13px,-1px) skew(-13deg); 
+  }
+}
+
+
+.glitch:after{
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom{
+  2%,64%{
+    transform: translate(-2px,0);
+  }
+  4%,60%{
+    transform: translate(-2px,0);
+  }
+  62%{
+    transform: translate(-22px,5px) skew(21deg); 
+  }
+}
+
+.text1{
+	text-align: center;
+	font-size: 50px;
+	color: #7847F9;
+
+}
+.text2{
+	font-size: 100px;
+	 position: relative;
+  left: 55rem;
+  bottom: 5rem
+	
+}
+body {
+	color: black;
+	
+	margin: 0;
+	padding: 0;
+}
+body::-webkit-scrollbar {
+	width: 0px;
+	height: 0px;
+
+}
+
+
+main {
+	margin-left: 5rem;
+	padding: 1rem;
+}
+img{
+	position: relative;
+	left:50rem;
+}
+
+.navbar {
+	position: fixed;
+	background-color: var(--bg-primary);
+	transition: width 200ms ease;
+
+}
+.navbar-nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+}
+.nav-item {
+	width: 100%;
+}
+
+.nav-item:last-child {
+	margin-top: auto;
+}
+.nav-link {
+	display: flex;
+	align-items: center;
+	height: 5rem;
+	color: var(--text-primary);
+	text-decoration: none;
+	filter: grayscale(100%) opacity(0.7);
+	transition: var(--transition-speed);
+}
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+
+}
+.link-text {
+	display: none;
+	margin: 1rem;
+}
+.nav-link svg{
+	width: 2rem;
+	min-width:  2rem;
+	margin: 0 1.5rem;
+}
+
+
+.navbar:hover .link-text {
+	display: block;
+}
+
+.fa-primary{
+	color: #ff7eee;
+}
+.fa-secondary{
+	color: #df49a6;
+}
+
+.fa-primary, .fa-secondary {
+	transition: var(--transition-speed);
+}
+.logo {
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+	text-align: center;
+	color: var(--text-secondary);
+	background: var(--bg-secondary);
+	font-size: 1.5rem;
+	letter-spacing: 0.3ch;
+	width: 100%;
+}
+
+.logo svg {
+	transform: rotate(0deg);
+	transition: transform var(--transition-speed);
+}
+.logo-text
+{
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: var(--transition-speed);
+}
+
+.navbar:hover .logo svg{
+	transform: rotate(-180deg);
+
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+  img{
+  max-width: 10%;
+  max-height: 10%;
+}
+.box1 {
+  position: absolute;
+  left:45rem;
+  top: 25px;
+
+}
+
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+
+  }
+ .navbar:hover .logo svg
+  {
+    margin-left: 11rem;
+  }
+ .navbar:hover .logo-text
+  {
+    left: 0px;
+  }
+
+
+      
+.rotate:hover {
+  animation: rotation 2s infinite linear;
+
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    
+  }
+ 
